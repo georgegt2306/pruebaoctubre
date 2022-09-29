@@ -4,14 +4,13 @@ $decimal=$_GET['decimal'];
 $transformar=$_GET['transformar'];
 
 
-echo(llamar($decimal,$transformar));
+echo("LA TRANSFORMACIÓN A BASE".$transformar." ES: ". llamar($decimal,$transformar));
 
 
 
     function llamar($n1, $n2){
         
         $acumulador=[];
-
         
         while ($n1 > $n2) {  
             
@@ -24,7 +23,11 @@ echo(llamar($decimal,$transformar));
         }
         array_push($acumulador,$n1);
 
-        var_dump(array_reverse($acumulador));
+        $invertir= array_reverse($acumulador);
+
+        $respuesta= implode("", $invertir);
+
+        return $respuesta;
 
     }
 
